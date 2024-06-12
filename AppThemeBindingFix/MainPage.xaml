@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppThemeBindingFix.MainPage"
+             Background="{AppThemeBinding Dark={StaticResource Gray900}, Light={StaticResource Gray100}}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                x:Name="theme"
+                   Style="{StaticResource Headline}" />
+            <Label x:Name="setting"
+                   Style="{StaticResource Headline}" />
+
+            <Button Text="Dark mode"
+                    Background="Black"
+                    TextColor="White"
+                    Clicked="Dark_Clicked" />
+
+            <Button Text="Light mode"
+                    Background="White"
+                    TextColor="Black"
+                    Clicked="Light_Clicked" />
+
+            <Button Text="System mode"
+                    Background="{AppThemeBinding Dark={StaticResource Gray900}, Light={StaticResource Gray100}}"
+                    TextColor="{AppThemeBinding Dark={StaticResource Gray100}, Light={StaticResource Gray900}}"
+                    Clicked="System_Clicked" />
+
+            <Button Text="open bottom sheet"
+                    x:Name="CounterBtn"
+                    Clicked="OnCounterClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
